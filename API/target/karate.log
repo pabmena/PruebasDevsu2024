@@ -1,0 +1,1674 @@
+19:15:36.434 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:16:31.814 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:16:32.170 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712096192167
+19:16:33.713 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+19:16:34.417 [main]  DEBUG com.intuit.karate - response time in milliseconds: 699
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 58015d6fb6b0afab385b0abcc1392678
+1 < Date: Tue, 02 Apr 2024 22:16:33 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+19:16:34.469 [main]  ERROR com.intuit.karate - features/loginFailure.feature:8
+And match response == { message: 'User does not exist.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"User does not exist."}
+  {"message":"User does not exist."}
+
+
+features/loginFailure.feature:8
+19:16:35.069 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 4 (0 remaining) features/loginFailure.feature
+19:16:35.078 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+19:16:35.499 [main]  DEBUG com.intuit.karate - response time in milliseconds: 419
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 15c94b447d548b9e4a65d68cfd2fbe25
+1 < Date: Tue, 02 Apr 2024 22:16:35 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:16:35.502 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:16:35.555 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 4 (0 remaining) features/loginSuccess.feature
+19:16:35.561 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+19:16:35.960 [main]  DEBUG com.intuit.karate - response time in milliseconds: 397
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 7fe81311de41777c34e0fea4dca40d78
+1 < Date: Tue, 02 Apr 2024 22:16:35 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:16:35.962 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == { message: 'Sign up successful.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"Sign up successful."}
+
+
+features/signup.feature:8
+19:16:36.024 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 3 of 4 (0 remaining) features/signup.feature
+19:16:36.031 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+19:16:36.458 [main]  DEBUG com.intuit.karate - response time in milliseconds: 426
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: a57bbd118a376585f40f7b6f6437d52f
+1 < Date: Tue, 02 Apr 2024 22:16:35 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:16:36.460 [main]  ERROR com.intuit.karate - features/signupExistingUser.feature:8
+And match response == { message: 'This user already exist.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"This user already exist."}
+
+
+features/signupExistingUser.feature:8
+19:16:36.515 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 4 of 4 (0 remaining) features/signupExistingUser.feature
+19:16:36.518 [main]  DEBUG com.intuit.karate.Suite - waiting for 4 features to complete
+19:18:37.995 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:18:38.202 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712096318199
+19:18:39.072 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+19:18:39.602 [main]  DEBUG com.intuit.karate - response time in milliseconds: 526
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 6530fdddabe9fbae801bc20285e45151
+1 < Date: Tue, 02 Apr 2024 22:18:39 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+19:18:39.638 [main]  ERROR com.intuit.karate - features/loginFailure.feature:8
+And match response == { message: 'User does not exist.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"User does not exist."}
+  {"message":"User does not exist."}
+
+
+features/loginFailure.feature:8
+19:18:40.035 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginFailure.feature
+19:20:53.272 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:20:53.480 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712096453477
+19:20:54.371 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+19:20:54.879 [main]  DEBUG com.intuit.karate - response time in milliseconds: 506
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 5d95cc810ef28b6d209ed248de52226e
+1 < Date: Tue, 02 Apr 2024 22:20:54 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+19:20:55.300 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/loginFailure.feature
+19:21:33.830 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:21:34.042 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712096494039
+19:21:34.914 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+19:21:35.455 [main]  DEBUG com.intuit.karate - response time in milliseconds: 537
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: ecb2d37ca92d0dda0b9a5a4111b152a8
+1 < Date: Tue, 02 Apr 2024 22:21:34 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:21:35.490 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:21:35.884 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+19:28:27.236 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:28:27.447 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712096907445
+19:28:28.306 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass01"}
+
+19:28:28.909 [main]  DEBUG com.intuit.karate - response time in milliseconds: 598
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: a9e7eb05fc5b1c24e6051fd299dc71ac
+1 < Date: Tue, 02 Apr 2024 22:28:28 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:28:28.945 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:28:29.345 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+19:33:17.449 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:33:17.657 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712097197653
+19:33:18.524 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 54
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser02","password":"xd@ttWyqRB8FBcs"}
+
+19:33:19.043 [main]  DEBUG com.intuit.karate - response time in milliseconds: 515
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 4222d94d675eb9271416ad6eb6ff2e95
+1 < Date: Tue, 02 Apr 2024 22:33:18 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:33:19.077 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:33:19.460 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+19:36:07.465 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:36:07.673 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712097367670
+19:36:08.537 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser007","password":"testPass007"}
+
+19:36:09.050 [main]  DEBUG com.intuit.karate - response time in milliseconds: 509
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 9b4fbd6fd9fd95b56ab020b3cedf1715
+1 < Date: Tue, 02 Apr 2024 22:36:08 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:36:09.093 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:36:09.506 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+19:41:46.290 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:41:46.504 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712097706501
+19:41:47.352 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser007","password":"testPass007"}
+
+19:41:48.181 [main]  DEBUG com.intuit.karate - response time in milliseconds: 824
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 5eb4d403e32570a2e206ec85b84d2141
+1 < Date: Tue, 02 Apr 2024 22:41:47 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+19:41:48.216 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+19:41:48.613 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+19:47:13.261 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:47:13.469 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098033466
+19:47:14.346 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+19:47:14.898 [main]  DEBUG com.intuit.karate - response time in milliseconds: 549
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 192be061e63cff55be14901f0fb5033c
+1 < Date: Tue, 02 Apr 2024 22:47:14 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:47:14.933 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == { message: 'Sign up successful.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"Sign up successful."}
+
+
+features/signup.feature:8
+19:47:15.342 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:47:47.244 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:47:47.450 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098067446
+19:47:48.343 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 49
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser01","password":"testPass01"}
+
+19:47:48.945 [main]  DEBUG com.intuit.karate - response time in milliseconds: 599
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: cdf210a1bac2ae562d2e0173017b6a00
+1 < Date: Tue, 02 Apr 2024 22:47:48 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:47:48.981 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == { message: 'Sign up successful.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"Sign up successful."}
+
+
+features/signup.feature:8
+19:47:49.380 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:48:04.066 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:48:04.278 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098084275
+19:48:05.144 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser001","password":"testPass001"}
+
+19:48:05.672 [main]  DEBUG com.intuit.karate - response time in milliseconds: 521
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: c1f475bae4a7a2482eded58141c39800
+1 < Date: Tue, 02 Apr 2024 22:48:05 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:48:05.714 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == { message: 'Sign up successful.' }
+match failed: EQUALS
+  $ | data types don't match (STRING:MAP)
+  '""
+'
+  {"message":"Sign up successful."}
+
+features/signup.feature:8
+19:48:06.171 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:48:51.251 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:48:51.462 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098131458
+19:48:52.313 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser001","password":"testPass001"}
+
+19:48:52.883 [main]  DEBUG com.intuit.karate - response time in milliseconds: 566
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: b986e8362cb631458f468369da81b855
+1 < Date: Tue, 02 Apr 2024 22:48:52 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:48:52.916 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == {message: 'Sign up successful.'}
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"Sign up successful."}
+
+
+features/signup.feature:8
+19:48:53.309 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:49:08.894 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:49:09.113 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098149110
+19:49:10.067 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser009","password":"testPass009"}
+
+19:49:10.607 [main]  DEBUG com.intuit.karate - response time in milliseconds: 536
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 61a1e86b178b7e8f85fd59582c060522;o=1
+1 < Date: Tue, 02 Apr 2024 22:49:10 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:49:10.641 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == {message: 'Sign up successful.'}
+match failed: EQUALS
+  $ | data types don't match (STRING:MAP)
+  '""
+'
+  {"message":"Sign up successful."}
+
+features/signup.feature:8
+19:49:11.081 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:51:27.078 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:51:27.288 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098287286
+19:51:28.247 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser019","password":"testPass019"}
+
+19:51:28.805 [main]  DEBUG com.intuit.karate - response time in milliseconds: 555
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 55033a7dbd8a8d0db9e9a6cbcfbac0de
+1 < Date: Tue, 02 Apr 2024 22:51:28 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:51:28.839 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == ''
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  ''
+
+features/signup.feature:8
+19:51:29.262 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:51:55.547 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:51:55.755 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098315752
+19:51:56.671 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser018","password":"testPass018"}
+
+19:51:57.224 [main]  DEBUG com.intuit.karate - response time in milliseconds: 548
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 93906171d23fcb594b1f082bcc16db50
+1 < Date: Tue, 02 Apr 2024 22:51:56 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:51:57.261 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == ""
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  ''
+
+features/signup.feature:8
+19:51:57.679 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:53:09.779 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:53:09.987 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098389985
+19:53:10.895 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser018","password":"testPass018"}
+
+19:53:11.572 [main]  DEBUG com.intuit.karate - response time in milliseconds: 670
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: fd2b2bc43d02b9aa052e908a5af24c82
+1 < Date: Tue, 02 Apr 2024 22:53:11 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:53:11.617 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"This user already exist."}
+  '""'
+
+features/signup.feature:8
+19:53:12.062 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:53:31.104 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:53:31.309 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098411307
+19:53:32.214 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser020","password":"testPass020"}
+
+19:53:32.762 [main]  DEBUG com.intuit.karate - response time in milliseconds: 545
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 8fed9c53c069bba72ec751034ac9a0d1
+1 < Date: Tue, 02 Apr 2024 22:53:32 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:53:32.795 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  '""'
+
+features/signup.feature:8
+19:53:33.220 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:55:53.444 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:55:53.639 [main]  ERROR c.intuit.karate.core.FeatureParser - not a valid feature file: features/signup.feature - mismatched input ''' expecting <EOF>
+19:56:04.662 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:56:04.868 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098564865
+19:56:05.798 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser021","password":"testPass021"}
+
+19:56:06.350 [main]  DEBUG com.intuit.karate - response time in milliseconds: 548
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: ed0be8d8fffcd6f9d373fe8821bbdb0f
+1 < Date: Tue, 02 Apr 2024 22:56:05 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:56:06.394 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""
+js failed:
+>>>>
+01: '""
+<<<<
+org.graalvm.polyglot.PolyglotException: SyntaxError: Unnamed:1:3 Missing close quote
+'""
+   ^
+
+- org.graalvm.polyglot.Context.eval(Context.java:425)
+- com.intuit.karate.graal.JsEngine.evalForValue(JsEngine.java:169)
+- com.intuit.karate.graal.JsEngine.eval(JsEngine.java:165)
+- com.intuit.karate.core.ScenarioEngine.evalJs(ScenarioEngine.java:1286)
+- com.intuit.karate.core.ScenarioEngine.evalKarateExpression(ScenarioEngine.java:2238)
+- com.intuit.karate.core.ScenarioEngine.match(ScenarioEngine.java:1841)
+- com.intuit.karate.core.ScenarioEngine.matchResult(ScenarioEngine.java:182)
+
+features/signup.feature:8
+19:56:06.818 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:56:28.679 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:56:28.885 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098588881
+19:56:29.782 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser021","password":"testPass021"}
+
+19:56:30.280 [main]  DEBUG com.intuit.karate - response time in milliseconds: 495
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 8c19939e85363118311261a8ac56116a
+1 < Date: Tue, 02 Apr 2024 22:56:29 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+19:56:30.331 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"This user already exist."}
+  '""'
+
+features/signup.feature:8
+19:56:30.740 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:56:43.968 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:56:44.178 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098604175
+19:56:45.131 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser022","password":"testPass022"}
+
+19:56:45.786 [main]  DEBUG com.intuit.karate - response time in milliseconds: 650
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 094fdfe442b262d6b099a8e9f8873030
+1 < Date: Tue, 02 Apr 2024 22:56:45 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:56:45.819 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  '""'
+
+features/signup.feature:8
+19:56:46.239 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+19:57:57.915 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+19:57:58.141 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098678138
+19:57:59.028 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser023","password":"testPass023"}
+
+19:57:59.601 [main]  DEBUG com.intuit.karate - response time in milliseconds: 568
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 5fc4ca9ef97cc5e93b83ca362fd1071b
+1 < Date: Tue, 02 Apr 2024 22:57:59 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+19:57:59.621 [main]  ERROR com.intuit.karate - features/signup.feature:9
+* match isEmptyResponse(response)
+no step-definition method match found for: match isEmptyResponse(response)
+features/signup.feature:9
+19:58:00.078 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:00:41.618 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:00:41.829 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098841826
+20:00:42.760 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser024","password":"testPass024"}
+
+20:00:43.386 [main]  DEBUG com.intuit.karate - response time in milliseconds: 622
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 76c88ba7de6ab50a09939dd26e25a2c9
+1 < Date: Tue, 02 Apr 2024 23:00:42 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:00:43.421 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  '""'
+
+features/signup.feature:8
+20:00:43.875 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:02:19.441 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:02:19.652 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098939649
+20:02:20.550 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser023","password":"testPass023"}
+
+20:02:21.155 [main]  DEBUG com.intuit.karate - response time in milliseconds: 601
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 231318ecbaf933b4dd4a61e2337f65d1
+1 < Date: Tue, 02 Apr 2024 23:02:20 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+20:02:21.203 [main]  ERROR com.intuit.karate - features/signup.feature:8
+* def isResponseEmpty = response.length() == 2
+js failed:
+>>>>
+01: response.length() == 2
+<<<<
+org.graalvm.polyglot.PolyglotException: TypeError: invokeMember (length) on {errorMessage=This user already exist.} failed due to: Unknown identifier: length
+- <js>.:program(Unnamed:1)
+
+features/signup.feature:8
+20:02:21.631 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:03:09.020 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:03:09.230 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712098989226
+20:03:10.199 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser025","password":"testPass025"}
+
+20:03:10.759 [main]  DEBUG com.intuit.karate - response time in milliseconds: 555
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 3c3a699a64a069991c297b955c378c46
+1 < Date: Tue, 02 Apr 2024 23:03:10 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:03:10.829 [main]  ERROR com.intuit.karate - features/signup.feature:9
+* assert isResponseEmpty == true
+did not evaluate to 'true': isResponseEmpty == true
+features/signup.feature:9
+20:03:11.243 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:04:44.144 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:04:44.368 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099084365
+20:04:45.276 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser026","password":"testPass026"}
+
+20:04:45.800 [main]  DEBUG com.intuit.karate - response time in milliseconds: 520
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 998d3c10600c3e4ec8ae383354d7f0be;o=1
+1 < Date: Tue, 02 Apr 2024 23:04:45 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:04:45.859 [main]  ERROR com.intuit.karate - features/signup.feature:9
+* assert responseIsCorrect
+did not evaluate to 'true': responseIsCorrect
+features/signup.feature:9
+20:04:46.266 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:05:56.976 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:05:57.188 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099157184
+20:05:58.058 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser027","password":"testPass027"}
+
+20:05:58.627 [main]  DEBUG com.intuit.karate - response time in milliseconds: 564
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: f8245c76de5f5501552dc50f38c94372
+1 < Date: Tue, 02 Apr 2024 23:05:58 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:05:58.659 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  '""'
+
+features/signup.feature:8
+20:05:59.074 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:07:49.985 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:07:50.193 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099270190
+20:07:51.061 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser028","password":"testPass028"}
+
+20:07:51.718 [main]  DEBUG com.intuit.karate - response time in milliseconds: 652
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: aecf0c0cc4173e74039cba51847d6879
+1 < Date: Tue, 02 Apr 2024 23:07:51 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:07:51.749 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == {}
+match failed: EQUALS
+  $ | data types don't match (STRING:MAP)
+  '""
+'
+  {}
+
+features/signup.feature:8
+20:07:52.156 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:09:06.246 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:09:06.463 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099346459
+20:09:07.457 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser029","password":"testPass029"}
+
+20:09:08.054 [main]  DEBUG com.intuit.karate - response time in milliseconds: 592
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: eb8964658cb5d7b108f55988c53474a3
+1 < Date: Tue, 02 Apr 2024 23:09:07 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:09:08.094 [main]  ERROR com.intuit.karate - features/signup.feature:8
+And match response == '""'
+match failed: EQUALS
+  $ | not equal (STRING:STRING)
+  '""
+'
+  '""'
+
+features/signup.feature:8
+20:09:08.524 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+20:10:56.639 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:10:56.858 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099456855
+20:10:57.811 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser030","password":"testPass030"}
+
+20:10:58.361 [main]  DEBUG com.intuit.karate - response time in milliseconds: 546
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 2cf22e7c41cfb73d125bd4b03cfd9c29
+1 < Date: Tue, 02 Apr 2024 23:10:57 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+20:10:58.930 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/signup.feature
+20:12:39.625 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:12:39.842 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099559839
+20:12:40.747 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+20:12:41.285 [main]  DEBUG com.intuit.karate - response time in milliseconds: 533
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 50bee5a10a9edb44db7f097d541a4eab
+1 < Date: Tue, 02 Apr 2024 23:12:40 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+20:12:41.325 [main]  ERROR com.intuit.karate - features/signupExistingUser.feature:8
+And match response == { message: 'This user already exist.' }
+match failed: EQUALS
+  $ | not equal | actual does not contain key - 'message' (MAP:MAP)
+  {"errorMessage":"This user already exist."}
+  {"message":"This user already exist."}
+
+
+features/signupExistingUser.feature:8
+20:12:41.747 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signupExistingUser.feature
+20:13:05.967 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:13:06.176 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099586170
+20:13:07.076 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+20:13:07.649 [main]  DEBUG com.intuit.karate - response time in milliseconds: 569
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 2a251efec6c9d1ec281ba8b964c0c937
+1 < Date: Tue, 02 Apr 2024 23:13:07 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+20:13:08.123 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/signupExistingUser.feature
+20:13:34.687 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:13:34.895 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099614892
+20:13:35.773 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+20:13:36.312 [main]  DEBUG com.intuit.karate - response time in milliseconds: 535
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: e08a8b6f12a6d373e1e4ec5e6d539f6b
+1 < Date: Tue, 02 Apr 2024 23:13:35 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+20:13:36.777 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/loginFailure.feature
+20:14:03.733 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+20:14:03.942 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712099643939
+20:14:04.836 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser007","password":"testPass007"}
+
+20:14:05.344 [main]  DEBUG com.intuit.karate - response time in milliseconds: 505
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 0ae89685095f1220abb7b64c2c51e112
+1 < Date: Tue, 02 Apr 2024 23:14:04 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+20:14:05.384 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'auth_token'
+
+
+features/loginSuccess.feature:8
+20:14:05.812 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+01:46:06.269 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+01:46:06.480 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712119566477
+01:46:07.374 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser030","password":"testPass030"}
+
+01:46:07.957 [main]  DEBUG com.intuit.karate - response time in milliseconds: 580
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 7e94d05929c6b2bd7375cb11c20f98a8;o=1
+1 < Date: Wed, 03 Apr 2024 04:46:07 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+"Auth_token: dGVzdFVzZXIwMzAxNzEyNzE5"
+
+
+01:46:07.989 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'auth_token'
+match failed: CONTAINS
+  $ | actual does not contain expected (STRING:STRING)
+  '"Auth_token: dGVzdFVzZXIwMzAxNzEyNzE5"
+'
+  'auth_token'
+
+features/loginSuccess.feature:8
+01:46:08.431 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+01:47:37.093 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+01:47:37.313 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712119657310
+01:47:38.251 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser029","password":"testPass029"}
+
+01:47:38.863 [main]  DEBUG com.intuit.karate - response time in milliseconds: 608
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 9f340acf717d9aba8438b4d65ccc3792
+1 < Date: Wed, 03 Apr 2024 04:47:38 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+"Auth_token: dGVzdFVzZXIwMjkxNzEyNzE5"
+
+
+01:47:39.331 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+01:54:55.119 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+01:54:55.358 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120095354
+01:54:56.333 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+01:54:57.093 [main]  DEBUG com.intuit.karate - response time in milliseconds: 757
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 9c731cbb3ffcb221cac2d78db6d15152;o=1
+1 < Date: Wed, 03 Apr 2024 04:54:56 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+01:54:57.548 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 4 (0 remaining) features/loginFailure.feature
+01:54:57.553 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser031","password":"testPass031"}
+
+01:54:58.028 [main]  DEBUG com.intuit.karate - response time in milliseconds: 464
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 8e6bd8a898b6ee361b037ae97ef0f649
+1 < Date: Wed, 03 Apr 2024 04:54:57 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+01:54:58.035 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'Auth_token:'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'Auth_token:'
+
+
+features/loginSuccess.feature:8
+01:54:58.088 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 4 (0 remaining) features/loginSuccess.feature
+01:54:58.093 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser031","password":"testPass031"}
+
+01:54:58.543 [main]  DEBUG com.intuit.karate - response time in milliseconds: 448
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 6950e597056b3a1172b48d18a7387377
+1 < Date: Wed, 03 Apr 2024 04:54:57 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+01:54:58.619 [main]  ERROR com.intuit.karate - features/signup.feature:8
+* def responseClean = response.replace(/\s/g, '')
+js failed:
+>>>>
+01: response.replace(/\s/g, '')
+<<<<
+org.graalvm.polyglot.PolyglotException: TypeError: invokeMember (replace) on {errorMessage=This user already exist.} failed due to: Unknown identifier: replace
+- <js>.:program(Unnamed:1)
+
+features/signup.feature:8
+01:54:58.695 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 3 of 4 (0 remaining) features/signup.feature
+01:54:58.700 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+01:54:59.138 [main]  DEBUG com.intuit.karate - response time in milliseconds: 436
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 482972627c3bafc011ce59176157e227
+1 < Date: Wed, 03 Apr 2024 04:54:58 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+01:54:59.170 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 4 of 4 (0 remaining) features/signupExistingUser.feature
+01:54:59.170 [main]  DEBUG com.intuit.karate.Suite - waiting for 4 features to complete
+01:56:28.019 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+01:56:28.248 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120188244
+01:56:29.225 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser031","password":"testPass031"}
+
+01:56:29.763 [main]  DEBUG com.intuit.karate - response time in milliseconds: 534
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: a9abf94a951021a56b355e636a12c9cb
+1 < Date: Wed, 03 Apr 2024 04:56:29 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+01:56:29.801 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'Auth_token:'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'Auth_token:'
+
+
+features/loginSuccess.feature:8
+01:56:30.257 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+01:58:52.329 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+01:58:52.565 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120332562
+01:58:53.563 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser031","password":"testPass031"}
+
+01:58:54.182 [main]  DEBUG com.intuit.karate - response time in milliseconds: 617
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: cc58243e511c0fbb60620f725b57bcca
+1 < Date: Wed, 03 Apr 2024 04:58:53 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"Wrong password."}
+
+
+01:58:54.224 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'Auth_token:'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"Wrong password."}
+  'Auth_token:'
+
+
+features/loginSuccess.feature:8
+01:58:54.679 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+02:01:13.126 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:01:13.347 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120473343
+02:01:14.268 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+02:01:14.893 [main]  DEBUG com.intuit.karate - response time in milliseconds: 622
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 0d84ff08d704a3911b84f54958c9fb3d
+1 < Date: Wed, 03 Apr 2024 05:01:14 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+02:01:15.352 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/loginFailure.feature
+02:02:32.519 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:02:32.757 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120552754
+02:02:33.725 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser032","password":"testPass032"}
+
+02:02:34.289 [main]  DEBUG com.intuit.karate - response time in milliseconds: 560
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: f4d580177979a550ae0201666b963530
+1 < Date: Wed, 03 Apr 2024 05:02:33 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+02:02:34.330 [main]  ERROR com.intuit.karate - features/loginSuccess.feature:8
+And match response contains 'Auth_token:'
+match failed: CONTAINS
+  $ | data types don't match (MAP:STRING)
+  {"errorMessage":"User does not exist."}
+  'Auth_token:'
+
+
+features/loginSuccess.feature:8
+02:02:34.788 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+02:03:49.561 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:03:49.790 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120629788
+02:03:50.710 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser030","password":"testPass030"}
+
+02:03:51.399 [main]  DEBUG com.intuit.karate - response time in milliseconds: 687
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 49316d99523ee8d42653eeb061bfbcc0
+1 < Date: Wed, 03 Apr 2024 05:03:50 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+"Auth_token: dGVzdFVzZXIwMzAxNzEyNzIw"
+
+
+02:03:51.891 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/loginSuccess.feature
+02:05:12.248 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:05:12.519 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120712515
+02:05:13.461 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser031","password":"testPass031"}
+
+02:05:14.022 [main]  DEBUG com.intuit.karate - response time in milliseconds: 556
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 35674335842130c7455e36913fccee46
+1 < Date: Wed, 03 Apr 2024 05:05:13 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+02:05:14.101 [main]  ERROR com.intuit.karate - features/signup.feature:8
+* def responseClean = response.replace(/\s/g, '')
+js failed:
+>>>>
+01: response.replace(/\s/g, '')
+<<<<
+org.graalvm.polyglot.PolyglotException: TypeError: invokeMember (replace) on {errorMessage=This user already exist.} failed due to: Unknown identifier: replace
+- <js>.:program(Unnamed:1)
+
+features/signup.feature:8
+02:05:14.557 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) features/signup.feature
+02:06:45.406 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:06:45.637 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120805635
+02:06:46.604 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser033","password":"testPass033"}
+
+02:06:47.226 [main]  DEBUG com.intuit.karate - response time in milliseconds: 618
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 3a71e86216b459f3642d2fc2f2c5ee68
+1 < Date: Wed, 03 Apr 2024 05:06:46 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+02:06:47.779 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/signup.feature
+02:07:28.636 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:07:28.881 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120848878
+02:07:29.897 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser034","password":"testPass034"}
+
+02:07:30.609 [main]  DEBUG com.intuit.karate - response time in milliseconds: 709
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: 70b27c6ac39b4d256f52c4f66e664803
+1 < Date: Wed, 03 Apr 2024 05:07:29 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+02:07:31.232 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/signup.feature
+02:08:42.293 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:08:42.518 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712120922510
+02:08:43.463 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+02:08:44.730 [main]  DEBUG com.intuit.karate - response time in milliseconds: 1263
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: a01267fbd533b1e0b9326e95ee0698f0
+1 < Date: Wed, 03 Apr 2024 05:08:44 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+02:08:45.167 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) features/signupExistingUser.feature
+02:15:46.032 [main]  INFO  com.intuit.karate - Karate version: 1.4.1
+02:15:46.249 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1712121346247
+02:15:47.186 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 47
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"wrongUser","password":"wrongPass"}
+
+02:15:47.824 [main]  DEBUG com.intuit.karate - response time in milliseconds: 633
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: c41dcb25c13bbf6e143a39365c2fe79e
+1 < Date: Wed, 03 Apr 2024 05:15:47 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"User does not exist."}
+
+
+02:15:48.291 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 4 (0 remaining) features/loginFailure.feature
+02:15:48.297 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser030","password":"testPass030"}
+
+02:15:48.781 [main]  DEBUG com.intuit.karate - response time in milliseconds: 482
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: f9d1f26e8b97ed6593e33c526d630fb4;o=1
+1 < Date: Wed, 03 Apr 2024 05:15:48 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+"Auth_token: dGVzdFVzZXIwMzAxNzEyNzIx"
+
+
+02:15:48.828 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 2 of 4 (0 remaining) features/loginSuccess.feature
+02:15:48.836 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 51
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser035","password":"testPass035"}
+
+02:15:49.339 [main]  DEBUG com.intuit.karate - response time in milliseconds: 501
+1 < 200
+1 < Content-Type: application/json
+1 < X-Cloud-Trace-Context: a9be75e7175bcb73752a1e5c4c14d4e6
+1 < Date: Wed, 03 Apr 2024 05:15:48 GMT
+1 < Server: Google Frontend
+1 < Content-Length: 3
+""
+
+
+02:15:49.487 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 3 of 4 (0 remaining) features/signup.feature
+02:15:49.491 [main]  DEBUG com.intuit.karate - request:
+1 > POST https://api.demoblaze.com/signup
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 45
+1 > Host: api.demoblaze.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/11.0.19)
+1 > Accept-Encoding: gzip,deflate
+{"username":"testUser","password":"testPass"}
+
+02:15:49.945 [main]  DEBUG com.intuit.karate - response time in milliseconds: 452
+1 < 200
+1 < Content-Type: application/json
+1 < Vary: Accept-Encoding
+1 < X-Cloud-Trace-Context: 9481082e2ca5af84e7b7a0a798b5c4a1
+1 < Date: Wed, 03 Apr 2024 05:15:49 GMT
+1 < Server: Google Frontend
+1 < Cache-Control: private
+1 < Transfer-Encoding: chunked
+{"errorMessage":"This user already exist."}
+
+
+02:15:49.991 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 4 of 4 (0 remaining) features/signupExistingUser.feature
+02:15:49.992 [main]  DEBUG com.intuit.karate.Suite - waiting for 4 features to complete

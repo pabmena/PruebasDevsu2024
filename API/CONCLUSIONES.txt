@@ -1,0 +1,37 @@
+Resumen
+
+Este informe detalla los hallazgos y conclusiones derivados del ejercicio de pruebas automatizadas de las API de registro (signup) e inicio de sesión (login) proporcionadas por el sitio web https://www.demoblaze.com/, utilizando el marco de trabajo Karate para la automatización de pruebas API.
+
+Hallazgos
+
+Registro de Usuario:
+
+Las pruebas automatizadas revelaron que la API de registro maneja correctamente tanto la creación de nuevos usuarios como los intentos de registro con nombres de usuario ya existentes, devolviendo respuestas adecuadas en ambos casos.
+Se observó una particularidad en la respuesta de la API al registrar un usuario nuevo, devolviendo una cadena vacía codificada como JSON ("") en lugar de un mensaje explícito de éxito, lo cual requería una validación específica en las pruebas.
+
+Inicio de Sesión de Usuario:
+
+La prueba de inicio de sesión exitoso falló inicialmente debido a un desajuste entre las credenciales utilizadas en la prueba y las esperadas por la API, destacando la importancia de mantener actualizadas las credenciales de prueba.
+La validación del token de autenticación en la respuesta de la API fue inicialmente problemática debido a discrepancias en el formato de respuesta esperado. Se esperaba un objeto JSON, pero la respuesta incluía una cadena con el token.
+
+Conclusiones
+
+Robustez de la API: La API demostró ser robusta en términos de manejo de registros e inicios de sesión, procesando adecuadamente las solicitudes válidas y devolviendo mensajes de error claros para solicitudes inválidas.
+
+Importancia de la Precisión en las Pruebas: Los desafíos encontrados subrayan la importancia de diseñar pruebas que sean precisas respecto a los datos de entrada y las respuestas esperadas. Las pruebas deben ajustarse cuidadosamente para reflejar el comportamiento exacto de la API, incluyendo el formato de las respuestas.
+
+Flexibilidad del Marco de Pruebas: Karate demostró ser una herramienta flexible y poderosa para la automatización de pruebas de API, permitiendo ajustes detallados en la forma en que se realizan las aserciones y se manejan las respuestas de la API.
+
+Documentación y Comunicación: 
+
+Este ejercicio resalta la importancia de tener documentación actualizada tanto para la API como para el conjunto de pruebas. La documentación precisa ayuda a evitar malentendidos y asegura que las pruebas se mantengan alineadas con el comportamiento esperado de la API.
+
+Recomendaciones
+
+Mantener una estrecha coordinación entre los equipos de desarrollo y de pruebas para asegurar que las pruebas reflejen con precisión el comportamiento actual de la API.
+
+Actualizar regularmente las credenciales y otros datos de prueba para coincidir con los requisitos de la API.
+
+Considerar la inclusión de validaciones más flexibles en las pruebas para acomodar variaciones en los formatos de respuesta de la API.
+
+Utilizar los informes generados por Karate para realizar un seguimiento detallado de los resultados de las pruebas y facilitar la identificación rápida de problemas.
