@@ -1,0 +1,17 @@
+Conclusiones del Test E2E en DemoBlaze
+
+1. Automatización Exitosa: El script de prueba automatizada logra navegar por la página web de "DemoBlaze", agregar productos al carrito de compras, y completar una transacción. Esto demuestra la viabilidad de usar Selenium WebDriver para pruebas E2E en aplicaciones web.
+
+2. Interacción con Elementos Web: Mediante el uso de localizadores como By.linkText y By.cssSelector, el script interactúa eficazmente con varios elementos web, incluyendo botones, enlaces y campos de entrada. Esto subraya la importancia de seleccionar estrategias de localización adecuadas para interactuar con la UI.
+
+3. Manejo de Alertas: La implementación de esperas explícitas para manejar las alertas JavaScript demuestra una técnica crucial para lidiar con diálogos emergentes y asegurar que las acciones se realicen en el momento adecuado.
+
+4. Esperas Implícitas vs. Explícitas: El código combina el uso de esperas implícitas para cargas generales de página con esperas explícitas para condiciones específicas. Este enfoque mixto permite un equilibrio entre la eficiencia de las pruebas y la robustez frente a la variabilidad de los tiempos de carga.
+
+5. Navegación y Actualizaciones de Estado: La necesidad de navegar de nuevo a la página principal después de agregar cada producto al carrito sugiere desafíos al mantener el estado deseado a través de las interacciones en la página. La gestión adecuada del flujo de navegación es esencial para mantener la coherencia de la prueba.
+
+6. Validación de Resultados: El script finaliza con la validación del mensaje de confirmación de compra, destacando la importancia de verificar los resultados esperados para asegurar que las acciones se hayan completado satisfactoriamente.
+
+7. Robustez y Mantenibilidad: Aunque el script logra su objetivo, la experiencia sugiere áreas de mejora para aumentar la robustez y mantenibilidad. La incorporación de un framework de pruebas como JUnit y el manejo más detallado de posibles excepciones aumentarían la eficacia y facilidad de mantenimiento del código. Además, la adopción de herramientas de construcción y gestión de dependencias como Maven o Gradle facilitaría la configuración del proyecto, la gestión de las dependencias y la integración continua. Bajo una metodología BDD (Behavior-Driven Development), el uso de Gherkin y herramientas como Cucumber o JBehave permitiría definir pruebas de manera más descriptiva y accesible, mejorando la comunicación entre los equipos técnicos y no técnicos y asegurando que las pruebas reflejen fielmente los requisitos del negocio.
+
+8. Importancia del Cierre de Recursos: El uso del bloque finally para cerrar el navegador después de la ejecución de la prueba subraya la importancia de liberar recursos, asegurando que el entorno de prueba se mantenga limpio y no consuma recursos innecesarios.
