@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "TestE2E",
+            "request": "launch",
+            "mainClass": "TestE2E",
+            "projectName": "PruebasDevsu2024_a5bdcced",
+            "vmArgs": "-cp \"./lib/*;.\""
+        }
+    ]
+}
